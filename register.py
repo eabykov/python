@@ -14,7 +14,7 @@ def watermark_text(input_image_path,
     # make the image editable
     drawing = ImageDraw.Draw(photo)
 
-    black = (10, 18, 24)
+    black = (3, 8, 12)
     font = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 50)
     drawing.text(pos, text, fill=black, font=font)
     photo.show()
