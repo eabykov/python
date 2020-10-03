@@ -43,7 +43,7 @@ if __name__ == '__main__':
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
     ans = input("Water mark text: ")
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
-    output_file = input("File name: ") + '.png'
+    output_file = input("Output file name: ") + '.png'
     for i in tqdm(range(100)):
       time.sleep(0.04)
     watermark_text(img, output_file, text = ans)
