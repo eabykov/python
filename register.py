@@ -48,4 +48,5 @@ if __name__ == '__main__':
       time.sleep(0.04)
     watermark_text(img, output_file, text = ans)
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
-    print('Saved file: {0}'.format(output_file))
+    pwd = os.getcwd()
+    print('Saved file: {0}/{1}'.format(pwd, output_file))
