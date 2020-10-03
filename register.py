@@ -41,7 +41,7 @@ if __name__ == '__main__':
     img = askopenfilename(filetypes=[('PNG pictures','*.png'), ('JPEG pictures','*.jpg')], title= "Please select a Image")
     print('Input file: {0}'.format(img))
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
-    ans = input("Water mark text: ")
+    ans = input("Watermark text: ")
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
     output_file = input("Output file name: ") + '.png'
     for i in tqdm(range(100)):
