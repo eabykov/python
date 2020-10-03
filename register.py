@@ -39,3 +39,4 @@ if __name__ == '__main__':
     for i in tqdm(range(100)):
       time.sleep(0.04)
     watermark_text(img, output_file, text = ans, pos=(0, 0))
+    print('Saved file: {0}'.format(output_file))
