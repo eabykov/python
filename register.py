@@ -19,6 +19,7 @@ def watermark_text(input_image_path,
     photo.save(output_image_path)
 
 if __name__ == '__main__':
+    print("File formats: jpg and png")
     Tk().withdraw()
     img = askopenfilename(filetypes=[('PNG pictures','*.png'), ('JPEG pictures','*.jpg')], title= "Please select a Image")
     ans = input("Water mark: ")
