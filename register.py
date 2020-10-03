@@ -29,9 +29,8 @@ if __name__ == '__main__':
     print('░░░╚═╝░░░╚═╝░░░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░')
     Tk().withdraw()
     img = askopenfilename(filetypes=[('PNG pictures','*.png'), ('JPEG pictures','*.jpg')], title= "Please select a Image")
-    ans = input("Water mark: ")
+    ans = input("Water mark text: ")
     output_file = input("File name: ") + '.png'
-    print('Processing')
     for i in tqdm(range(100)):
       time.sleep(0.1)
     watermark_text(img, output_file, text = ans, pos=(0, 0))
