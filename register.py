@@ -23,5 +23,5 @@ if __name__ == '__main__':
     Tk().withdraw()
     img = askopenfilename(filetypes=[('PNG pictures','*.png'), ('JPEG pictures','*.jpg')], title= "Please select a Image")
     ans = input("Water mark: ")
-    output_file = input("Final file: ")
+    output_file = input("File name: ") + '.png'
     watermark_text(img, output_file, text = ans, pos=(0, 0))
