@@ -13,7 +13,7 @@ def watermark_text(input_image_path,
     drawing = ImageDraw.Draw(photo)
 
     black = (10, 18, 24)
-    font = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 40)
+    font = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 50)
     drawing.text(pos, text, fill=black, font=font)
     photo.show()
     photo.save(output_image_path)
