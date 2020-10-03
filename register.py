@@ -8,17 +8,18 @@ from tkinter.filedialog import askopenfilename
 import time
 from tqdm import tqdm
 
-def watermark_text(input_image_path,
-                   output_image_path,
-                   text, pos):
+def watermark_text(input_image_path, output_image_path, text):
     photo = Image.open(input_image_path)
-
-    # make the image editable
     drawing = ImageDraw.Draw(photo)
-
-    black = (3, 8, 12)
+    w, h = photo.size
     font = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 50)
-    drawing.text(pos, text, fill=black, font=font)
+    text_w, text_h = drawing.textsize(text, font)
+    pos = w - text_w - 25, (h - text_h) - 25
+    c_text = Image.new('RGB', (text_w, (text_h)), color = '#000000')
+    drawing = ImageDraw.Draw(c_text)
+    drawing.text((0,0), text, fill="#ffffff", font=font)
+    c_text.putalpha(100)
+    photo.paste(c_text, pos, c_text)
     photo.save(output_image_path)
 
 if __name__ == '__main__':
@@ -45,6 +46,6 @@ if __name__ == '__main__':
     output_file = input("File name: ") + '.png'
     for i in tqdm(range(100)):
       time.sleep(0.04)
-    watermark_text(img, output_file, text = ans, pos=(0, 0))
+    watermark_text(img, output_file, text = ans)
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
     print('Saved file: {0}'.format(output_file))
