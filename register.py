@@ -27,15 +27,15 @@ def watermark_text(input_image_path,
 
 def watermark_with_transparency(input_image_path,
                                 output_image_path,
-                                watermark_image_path,
-                                position):
+                                watermark_image_path):
     base_image = Image.open(input_image_path)
     watermark = Image.open(watermark_image_path)
-    width, height = base_image.size
-
-    transparent = Image.new('RGBA', (width, height), (0,0,0,0))
+    w, h = base_image.size
+    img_w, img_h = watermark.size
+    pos = w - img_w - 25, (h - img_h) - 25
+    transparent = Image.new('RGBA', (w, h), (0,0,0,0))
     transparent.paste(base_image, (0,0))
-    transparent.paste(watermark, position, mask=watermark)
+    transparent.paste(watermark, pos, mask=watermark)
     transparent.save(output_image_path)
 
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         print('{0} |'.format(dt_string), end=' ')
         output_file = input("Output file name: ") + '.png'
-        watermark_with_transparency(img_input, output_file, watermark_img, position=(0,0))
+        watermark_with_transparency(img_input, output_file, watermark_img)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         print('{0} |'.format(dt_string), end=' ')
