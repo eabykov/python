@@ -33,7 +33,7 @@ if __name__ == '__main__':
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     print('{0} | Developer: Daniil Mironyk'.format(dt_string))
     print('{0} | Version: 1.0.3'.format(dt_string))
-    print('{0} | Required packages: pillow tqdm matplotlib'.format(dt_string))
+    print('{0} | Required packages: pillow'.format(dt_string))
     Tk().withdraw()
     now = datetime.now(); dt_string = now.strftime("%d/%m/%Y %H:%M:%S"); print('{0} |'.format(dt_string), end=' ')
     img = askopenfilename(filetypes=[('PNG pictures','*.png'), ('JPEG pictures','*.jpg')], title= "Please select a Image")
