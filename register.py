@@ -1,4 +1,5 @@
 import os
+import sys
 from datetime import datetime
 from PIL import Image
 from PIL import ImageDraw
@@ -107,6 +108,6 @@ if __name__ == '__main__':
         pwd = os.getcwd()
         print('Saved file: {0}/{1}'.format(pwd, output_file))
     else:
-      sys.stdout.write("Please respond with 'image' or 'text'")
+      sys.stdout.write("{0} | Please respond with 'image' or 'text'\n".format(dt_string))
 
 
